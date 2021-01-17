@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Todo</title>
+        <link rel="stylesheet" href="styles/style.css">
+        <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300&display=swap" rel="stylesheet">
+    </head>
+    <body>
+        <main>
+            <div class="hamburger">
+                <div class="bar1"></div>
+                <div class="bar2"></div>
+                <div class="bar3"></div>
+            </div>
+
+            <div class="side-nav">
+                <h1>Project</h1>
+                <ul id="project-lists">
+                    <!-- Add Project Titles here. -->
+                    
+                </ul>
+
+                <div id="add-project-container">
+                    <form id="add-project-form">
+                        <input type="text" name="title" id="title-input" placeholder="New Project" autocomplete="off">
+                        <button type="submit" id="add-project-btn">+</button>
+                    </form>
+                </div>
+            </div>
+
+        </main>
+        
+        <div id="form-popup">
+            <form id="add-task-form">
+                <h2>Add New Task</h2>
+                
+                <label for="task-name">Task Name<em>*</em> : </label>
+                <input type="text" name="task-name" id="task-name" placeholder="Task Name" required><br> 
+                
+                <label for="due-date">Due<em>*</em> : </label>
+                <input type="date" name="due-date" id="due-date" required><br>
+
+                <label for="priority">Priority: </label>
+                <select name="priority" id="task-priority">
+                    <option value="high">High</option>
+                    <option value="medium">Medium</option>
+                    <option value="low">Low</option>
+                </select><br>
+
+                <div class="task-form-btns">
+                    <button id="add-btn">Add</button>
+                    <button type="button" id="cancel-btn">Cancel</button>
+                </div>
+            </form>
+        </div>
+        <canvas class="background"></canvas>
+        <script src="../node_modules/particlesjs/dist/particles.min.js"></script>
+        <script src="main.js"></script>
+    </body>
+</html>
