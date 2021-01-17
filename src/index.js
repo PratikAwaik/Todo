@@ -86,23 +86,29 @@ function modfiyOnHamburger() {
     
     if (hamburger.className.split(" ")[1] === undefined) {
         Variables.hamburgerActive = true;
-        projectTasks.classList.add("hamburger-active");
         hamburger.classList.add("change");
         sideNav.classList.add("side-nav-active");
-        projectTasks.style.display = "none";
         main.style.background = "#2020bc";
 
         [...hamburger.children].forEach((child) => child.style.backgroundColor = "rgb(240, 240, 240)");
+
+        if (projectTasks != null) {
+            projectTasks.classList.add("hamburger-active");
+            projectTasks.style.display = "none";
+        }
     }
     else if (hamburger.className.split(" ")[1] === "change") {
         Variables.hamburgerActive = false;
-        projectTasks.className = "project-tasks";
         hamburger.className = "hamburger";
         sideNav.className = "side-nav";
-        projectTasks.style.display = "block";
         main.style.background = "";
 
         [...hamburger.children].forEach((child) => child.style.backgroundColor = "rgb(55, 55, 55)");
+
+        if (projectTasks != null) {
+            projectTasks.className = "project-tasks";
+            projectTasks.style.display = "block";
+        }
     }
 }
 
