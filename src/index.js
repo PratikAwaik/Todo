@@ -12,6 +12,7 @@ import {
     editTaskInProject
 } from "./task";
 
+const Particles = require("particlesjs");
 
 const formPopup = document.getElementById("form-popup");
 const addTaskForm = document.getElementById("add-task-form");

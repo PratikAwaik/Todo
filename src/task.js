@@ -3,6 +3,7 @@ import { Variables, updateLocalStorage } from "./index";
 
 
 const formPopup = document.getElementById("form-popup");
+const addTaskForm = document.getElementById("add-task-form");
 
 function addTaskToProject(projectIndex) {
     let taskName = document.getElementById("task-name");
@@ -58,6 +59,7 @@ function createTaskBody(projectIndex) {
 
     addTaskBtn.addEventListener("click", function() {
         formPopup.style.display = "block";
+        addTaskForm.children[0].textContent = "Add New Task";
         Variables.currProjectIndex = projectIndex;
         Variables.toAddTask = true;
         Variables.toEditTask = false;
@@ -140,6 +142,7 @@ function createTask(projectIndex, taskIndex) {
 
     editTaskBtn.addEventListener("click", function() {
         formPopup.style.display = "block";
+        addTaskForm.children[0].textContent = "Update Task";
         Variables.toEditTask = true, 
         Variables.toAddTask = false;
         Variables.currTaskIndex = taskIndex;
