@@ -201,6 +201,7 @@ function displayCorrespondingTasks(projectIndex) {
     });
 
     createTaskBody(projectIndex);
+    
     // show all tasks 
     for (let i = 0; i < Variables.myProjects[projectIndex].tasks.length; i++) {
         createTask(projectIndex, i);
