@@ -2,7 +2,7 @@
 
 This project was made as a part of [the Odin Project](https://theodinproject.com) curriculum. <br>
 
-### [View Live](https://pratikawaik.github.io/Todo) <br><br>
+### [View Live](https://pratikawaik.github.io/Todo) <br>
 
 ### Features <br>
 
