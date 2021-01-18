@@ -12,6 +12,8 @@ import {
     editTaskInProject
 } from "./task";
 
+import { Project, Task } from "./objects";
+
 const Particles = require("particlesjs");
 
 const formPopup = document.getElementById("form-popup");
@@ -78,6 +80,13 @@ addProjectForm.addEventListener("submit", function(e) {
 // modify elements when hamburger menu clicked
 hamburger.addEventListener("click", modfiyOnHamburger);
 
+// create Example Project when user first opens the page
+if (JSON.parse(localStorage.getItem("myProjects")).length === 0) {
+    createExampleProject();
+}
+
+else displayAllProjects();
+
 
 function modfiyOnHamburger() {
     const sideNav = document.querySelector(".side-nav");
@@ -110,6 +119,22 @@ function modfiyOnHamburger() {
             projectTasks.style.display = "block";
         }
     }
+}
+
+function createExampleProject() {
+    const exampleProject = Project("Example Project");
+    const task1 = Task("Example Task 1", "2021-01-18", "high", false);
+    const task2 = Task("Example Task 2", "2021-01-18", "medium", false);
+    const task3 = Task("Example Task 3", "2021-01-18", "low", false);
+    exampleProject.tasks.push(task1);
+    exampleProject.tasks.push(task2);
+    exampleProject.tasks.push(task3);
+
+    Variables.myProjects.push(exampleProject);
+    updateLocalStorage();
+    
+    createProject(0);
+    displayCorrespondingTasks(0);
 }
 
 function updateLocalStorage() {
@@ -155,8 +180,6 @@ window.onload = function() {
         ]
     });
 };
-
-displayAllProjects();
 
 export {
     updateLocalStorage, 
